@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   let welcomeViewController = WelcomeViewController();
   let homeViewController = HomeViewController();
+  let profileViewController = ProfileViewController();
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     
@@ -50,7 +51,23 @@ extension SceneDelegate {
 
 extension SceneDelegate: WelcomeViewControllerDelegate {
   func loginSuccess() {
-    setViewController(viewController: homeViewController);
+    UITabBar.appearance().isTranslucent = false;
+    UITabBar.appearance().barTintColor = .black;
+    UITabBar.appearance().tintColor = .white;
+    UITabBar.appearance().shadowImage = UIImage();
+    UITabBar.appearance().backgroundImage = UIImage();
+    
+    let tabBarViewController = UITabBarController();
+    
+    homeViewController.setTabBarImage(imageName: "house.fill", title: "Home");
+    profileViewController.setTabBarImage(imageName: "person.fill", title: "Profile");
+    
+    let home = UINavigationController(rootViewController: homeViewController);
+    let profile = UINavigationController(rootViewController: profileViewController);
+        
+    tabBarViewController.setViewControllers([home, profile], animated: true);
+
+    setViewController(viewController: tabBarViewController);
   };
 };
 

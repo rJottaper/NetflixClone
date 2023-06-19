@@ -19,6 +19,8 @@
 		71CEB8FF2A3152C4007ED159 /* GetMoviesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB8FE2A3152C4007ED159 /* GetMoviesData.swift */; };
 		71CEB9022A35823C007ED159 /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB9012A35823C007ED159 /* UIImageView+Utils.swift */; };
 		71CEB9052A3A415D007ED159 /* MovieDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB9042A3A415D007ED159 /* MovieDescriptionViewController.swift */; };
+		71CEB90B2A3EB22D007ED159 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB90A2A3EB22D007ED159 /* ProfileViewController.swift */; };
+		71CEB90D2A3EB511007ED159 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB90C2A3EB511007ED159 /* UIViewController+Utils.swift */; };
 		A9F3820168A0A83E9BA15276 /* Pods_Netflix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319C887D52CF0721E2903219 /* Pods_Netflix.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		71CEB8FE2A3152C4007ED159 /* GetMoviesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMoviesData.swift; sourceTree = "<group>"; };
 		71CEB9012A35823C007ED159 /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		71CEB9042A3A415D007ED159 /* MovieDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDescriptionViewController.swift; sourceTree = "<group>"; };
+		71CEB90A2A3EB22D007ED159 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		71CEB90C2A3EB511007ED159 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		DBF2F4F3C60AE69BBC2052BF /* Pods-Netflix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Netflix.release.xcconfig"; path = "Target Support Files/Pods-Netflix/Pods-Netflix.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -90,6 +94,7 @@
 				71769E6D2A1D935E00C73F6B /* Welcome */,
 				7198BD982A2A6424006697F6 /* Home */,
 				71CEB9032A3A412E007ED159 /* MovieDescription */,
+				71CEB9092A3EB218007ED159 /* Profile */,
 				71CEB9002A358226007ED159 /* Utils */,
 			);
 			path = Netflix;
@@ -136,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				71CEB9012A35823C007ED159 /* UIImageView+Utils.swift */,
+				71CEB90C2A3EB511007ED159 /* UIViewController+Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -148,13 +154,20 @@
 			name = MovieDescription;
 			sourceTree = "<group>";
 		};
+		71CEB9092A3EB218007ED159 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				71CEB90A2A3EB22D007ED159 /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		928A7A1D9A110A7985FCECD8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				0A0EDF4C28C50A1EE8AF582F /* Pods-Netflix.debug.xcconfig */,
 				DBF2F4F3C60AE69BBC2052BF /* Pods-Netflix.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -278,7 +291,9 @@
 				71CEB8FF2A3152C4007ED159 /* GetMoviesData.swift in Sources */,
 				71CEB9052A3A415D007ED159 /* MovieDescriptionViewController.swift in Sources */,
 				71769E572A1D914400C73F6B /* AppDelegate.swift in Sources */,
+				71CEB90B2A3EB22D007ED159 /* ProfileViewController.swift in Sources */,
 				71769E592A1D914400C73F6B /* SceneDelegate.swift in Sources */,
+				71CEB90D2A3EB511007ED159 /* UIViewController+Utils.swift in Sources */,
 				71CEB8FB2A2AF2F4007ED159 /* MovieCarousel.swift in Sources */,
 				71CEB9022A35823C007ED159 /* UIImageView+Utils.swift in Sources */,
 				71769E6F2A21C17D00C73F6B /* WelcomeView.swift in Sources */,
