@@ -21,6 +21,7 @@
 		71CEB9052A3A415D007ED159 /* MovieDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB9042A3A415D007ED159 /* MovieDescriptionViewController.swift */; };
 		71CEB90B2A3EB22D007ED159 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB90A2A3EB22D007ED159 /* ProfileViewController.swift */; };
 		71CEB90D2A3EB511007ED159 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB90C2A3EB511007ED159 /* UIViewController+Utils.swift */; };
+		71DBF3CB2A3FE11C0066C6D2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBF3CA2A3FE11C0066C6D2 /* ProfileView.swift */; };
 		A9F3820168A0A83E9BA15276 /* Pods_Netflix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 319C887D52CF0721E2903219 /* Pods_Netflix.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		71CEB9042A3A415D007ED159 /* MovieDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDescriptionViewController.swift; sourceTree = "<group>"; };
 		71CEB90A2A3EB22D007ED159 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		71CEB90C2A3EB511007ED159 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		71DBF3CA2A3FE11C0066C6D2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DBF2F4F3C60AE69BBC2052BF /* Pods-Netflix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Netflix.release.xcconfig"; path = "Target Support Files/Pods-Netflix/Pods-Netflix.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				71CEB90A2A3EB22D007ED159 /* ProfileViewController.swift */,
+				71DBF3CA2A3FE11C0066C6D2 /* ProfileView.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71CEB8FD2A2C4431007ED159 /* CardCell.swift in Sources */,
+				71DBF3CB2A3FE11C0066C6D2 /* ProfileView.swift in Sources */,
 				71CEB8F82A2A6638007ED159 /* HomeViewController.swift in Sources */,
 				71769E5B2A1D914400C73F6B /* WelcomeViewController.swift in Sources */,
 				71CEB8FF2A3152C4007ED159 /* GetMoviesData.swift in Sources */,
