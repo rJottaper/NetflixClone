@@ -13,6 +13,12 @@
 		71769E602A1D914A00C73F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71769E5F2A1D914A00C73F6B /* Assets.xcassets */; };
 		71769E632A1D914A00C73F6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71769E612A1D914A00C73F6B /* LaunchScreen.storyboard */; };
 		71769E6F2A21C17D00C73F6B /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71769E6E2A21C17D00C73F6B /* WelcomeView.swift */; };
+		7193F96C2A47F66800B1378E /* Netflix.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7193F96A2A47F66800B1378E /* Netflix.xcdatamodeld */; };
+		7193F97F2A4A177500B1378E /* MovieDownload+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F97D2A4A177500B1378E /* MovieDownload+CoreDataClass.swift */; };
+		7193F9802A4A177500B1378E /* MovieDownload+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F97E2A4A177500B1378E /* MovieDownload+CoreDataProperties.swift */; };
+		7193F9852A4B709600B1378E /* DownloadMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F9842A4B709600B1378E /* DownloadMoviesViewController.swift */; };
+		7193F9872A4B775F00B1378E /* DownloadMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F9862A4B775F00B1378E /* DownloadMovieView.swift */; };
+		7193F98B2A4BBEED00B1378E /* MovieDownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F98A2A4BBEED00B1378E /* MovieDownloadCell.swift */; };
 		71CEB8F82A2A6638007ED159 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB8F72A2A6638007ED159 /* HomeViewController.swift */; };
 		71CEB8FB2A2AF2F4007ED159 /* MovieCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB8FA2A2AF2F4007ED159 /* MovieCarousel.swift */; };
 		71CEB8FD2A2C4431007ED159 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB8FC2A2C4431007ED159 /* CardCell.swift */; };
@@ -36,6 +42,12 @@
 		71769E622A1D914A00C73F6B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71769E642A1D914A00C73F6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71769E6E2A21C17D00C73F6B /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		7193F96B2A47F66800B1378E /* Netflix.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Netflix.xcdatamodel; sourceTree = "<group>"; };
+		7193F97D2A4A177500B1378E /* MovieDownload+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieDownload+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7193F97E2A4A177500B1378E /* MovieDownload+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieDownload+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7193F9842A4B709600B1378E /* DownloadMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadMoviesViewController.swift; sourceTree = "<group>"; };
+		7193F9862A4B775F00B1378E /* DownloadMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadMovieView.swift; sourceTree = "<group>"; };
+		7193F98A2A4BBEED00B1378E /* MovieDownloadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDownloadCell.swift; sourceTree = "<group>"; };
 		71CEB8F72A2A6638007ED159 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		71CEB8FA2A2AF2F4007ED159 /* MovieCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCarousel.swift; sourceTree = "<group>"; };
 		71CEB8FC2A2C4431007ED159 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
@@ -89,15 +101,19 @@
 		71769E552A1D914400C73F6B /* Netflix */ = {
 			isa = PBXGroup;
 			children = (
+				7193F97D2A4A177500B1378E /* MovieDownload+CoreDataClass.swift */,
+				7193F97E2A4A177500B1378E /* MovieDownload+CoreDataProperties.swift */,
 				71769E562A1D914400C73F6B /* AppDelegate.swift */,
 				71769E582A1D914400C73F6B /* SceneDelegate.swift */,
-				71CEB8F92A2AF2AB007ED159 /* Models */,
 				71769E6A2A1D92F100C73F6B /* Files */,
+				71CEB8F92A2AF2AB007ED159 /* Models */,
 				71769E6D2A1D935E00C73F6B /* Welcome */,
 				7198BD982A2A6424006697F6 /* Home */,
 				71CEB9032A3A412E007ED159 /* MovieDescription */,
+				7193F9812A4B701700B1378E /* DownloadMovies */,
 				71CEB9092A3EB218007ED159 /* Profile */,
 				71CEB9002A358226007ED159 /* Utils */,
+				7193F96A2A47F66800B1378E /* Netflix.xcdatamodeld */,
 			);
 			path = Netflix;
 			sourceTree = "<group>";
@@ -121,6 +137,15 @@
 			name = Welcome;
 			sourceTree = "<group>";
 		};
+		7193F9812A4B701700B1378E /* DownloadMovies */ = {
+			isa = PBXGroup;
+			children = (
+				7193F9842A4B709600B1378E /* DownloadMoviesViewController.swift */,
+				7193F9862A4B775F00B1378E /* DownloadMovieView.swift */,
+			);
+			name = DownloadMovies;
+			sourceTree = "<group>";
+		};
 		7198BD982A2A6424006697F6 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +160,7 @@
 			children = (
 				71CEB8FA2A2AF2F4007ED159 /* MovieCarousel.swift */,
 				71CEB8FC2A2C4431007ED159 /* CardCell.swift */,
+				7193F98A2A4BBEED00B1378E /* MovieDownloadCell.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -289,13 +315,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				71CEB8FD2A2C4431007ED159 /* CardCell.swift in Sources */,
+				7193F98B2A4BBEED00B1378E /* MovieDownloadCell.swift in Sources */,
 				71DBF3CB2A3FE11C0066C6D2 /* ProfileView.swift in Sources */,
 				71CEB8F82A2A6638007ED159 /* HomeViewController.swift in Sources */,
+				7193F9852A4B709600B1378E /* DownloadMoviesViewController.swift in Sources */,
 				71769E5B2A1D914400C73F6B /* WelcomeViewController.swift in Sources */,
+				7193F9802A4A177500B1378E /* MovieDownload+CoreDataProperties.swift in Sources */,
+				7193F96C2A47F66800B1378E /* Netflix.xcdatamodeld in Sources */,
 				71CEB8FF2A3152C4007ED159 /* GetMoviesData.swift in Sources */,
 				71CEB9052A3A415D007ED159 /* MovieDescriptionViewController.swift in Sources */,
+				7193F9872A4B775F00B1378E /* DownloadMovieView.swift in Sources */,
 				71769E572A1D914400C73F6B /* AppDelegate.swift in Sources */,
 				71CEB90B2A3EB22D007ED159 /* ProfileViewController.swift in Sources */,
+				7193F97F2A4A177500B1378E /* MovieDownload+CoreDataClass.swift in Sources */,
 				71769E592A1D914400C73F6B /* SceneDelegate.swift in Sources */,
 				71CEB90D2A3EB511007ED159 /* UIViewController+Utils.swift in Sources */,
 				71CEB8FB2A2AF2F4007ED159 /* MovieCarousel.swift in Sources */,
@@ -510,6 +542,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7193F96A2A47F66800B1378E /* Netflix.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7193F96B2A47F66800B1378E /* Netflix.xcdatamodel */,
+			);
+			currentVersion = 7193F96B2A47F66800B1378E /* Netflix.xcdatamodel */;
+			path = Netflix.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 71769E4B2A1D914400C73F6B /* Project object */;
 }

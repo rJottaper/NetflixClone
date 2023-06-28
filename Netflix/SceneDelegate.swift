@@ -12,6 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   let welcomeViewController = WelcomeViewController();
   let homeViewController = HomeViewController();
+  let downloadMoviesViewController = DownloadMoviesViewController();
   let profileViewController = ProfileViewController();
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -60,12 +61,14 @@ extension SceneDelegate: WelcomeViewControllerDelegate {
     let tabBarViewController = UITabBarController();
     
     homeViewController.setTabBarImage(imageName: "house.fill", title: "Home");
+    downloadMoviesViewController.setTabBarImage(imageName: "arrow.down", title: "Downloads")
     profileViewController.setTabBarImage(imageName: "person.fill", title: "Profile");
     
     let home = UINavigationController(rootViewController: homeViewController);
+    let downloadMovies = UINavigationController(rootViewController: downloadMoviesViewController);
     let profile = UINavigationController(rootViewController: profileViewController);
         
-    tabBarViewController.setViewControllers([home, profile], animated: true);
+    tabBarViewController.setViewControllers([home, downloadMovies, profile], animated: true);
 
     setViewController(viewController: tabBarViewController);
   };

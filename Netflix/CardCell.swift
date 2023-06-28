@@ -24,6 +24,8 @@ class CardCell: UITableViewCell {
     return cardCollectionView;
   }();
   
+  let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext;
+  
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier);
     
@@ -80,5 +82,27 @@ extension CardCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     navigationController.view.layer.add(transition, forKey: nil);
     navigationController.pushViewController(movieDetailsViewController, animated: true); 
+  };
+  
+  func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+    let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in
+      let downloadAction = UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
+        if let movie = self!.movies?.results[indexPath.item] {
+          let movieDownload = MovieDownload(context: self!.context);
+          
+          movieDownload.title = movie.title;
+          movieDownload.posterPath = movie.posterPath;
+          
+          do {
+            try self?.context.save();
+            print("Movie saved");
+          } catch {
+            print("Failed to save movie");
+          };
+        };
+      };
+      return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction]);
+    };
+    return config;
   };
 };
