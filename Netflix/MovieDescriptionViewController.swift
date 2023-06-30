@@ -12,10 +12,7 @@ class MovieDescriptionViewController: UIViewController {
   var movie: Movie?
   
   let scrollView = UIScrollView();
-  let movieBanner = UIImageView();
-  let movieName = UILabel();
-  let watchButton = UIButton();
-  let movieDescription = UILabel();
+  let movieDescriptionView = MovieDescriptionView();
   
   var trailerURL: String?
   let trailerViewController = UIViewController();
@@ -80,13 +77,10 @@ extension MovieDescriptionViewController: YTPlayerViewDelegate {
 };
 
 // MARK: - Layout
-extension MovieDescriptionViewController {
+extension MovieDescriptionViewController: MovieDescriptionViewDelegate {
   func configureLayouts() {
     configureScrollView();
-    configureMovieBanner();
-    configureMovieName();
-    configureWatchButton();
-    configureMovieDescription();
+    configureMovieDescriptionView();
   };
   
   func configureScrollView() {
@@ -105,87 +99,23 @@ extension MovieDescriptionViewController {
     ]);
   };
   
-  func configureMovieBanner() {
-    scrollView.addSubview(movieBanner);
+  func configureMovieDescriptionView() {
+    scrollView.addSubview(movieDescriptionView);
     
-    movieBanner.translatesAutoresizingMaskIntoConstraints = false;
-    movieBanner.contentMode = .scaleAspectFill;
-    
-    if let imageURL = movie?.backdropPath {
-      movieBanner.downloaded(from: "https://image.tmdb.org/t/p/w500\(imageURL)")
-    };
+    movieDescriptionView.translatesAutoresizingMaskIntoConstraints = false;
+    movieDescriptionView.delegate = self;
+    movieDescriptionView.configureScreen(movie: movie)
     
     NSLayoutConstraint.activate([
-      movieBanner.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-      movieBanner.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-      movieBanner.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -15),
-      movieBanner.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+      movieDescriptionView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+      movieDescriptionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+      scrollView.trailingAnchor.constraint(equalTo: movieDescriptionView.trailingAnchor),
+      movieDescriptionView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+      movieDescriptionView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
     ]);
   };
   
-  func configureMovieName() {
-    scrollView.addSubview(movieName);
-    
-    movieName.translatesAutoresizingMaskIntoConstraints = false;
-    movieName.textAlignment = .center;
-    movieName.tintColor = .white;
-    movieName.font = .preferredFont(forTextStyle: .title1);
-    movieName.adjustsFontForContentSizeCategory = true;
-    movieName.numberOfLines = 0;
-    
-    if let name = movie?.title {
-      movieName.text = name;
-    };
-    
-    NSLayoutConstraint.activate([
-      movieName.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
-      scrollView.trailingAnchor.constraint(equalTo: movieName.trailingAnchor, constant: 15),
-      movieName.topAnchor.constraint(equalTo: movieBanner.bottomAnchor, constant: 10)
-    ]);
-  };
-  
-  func configureWatchButton() {
-    scrollView.addSubview(watchButton);
-    
-    watchButton.translatesAutoresizingMaskIntoConstraints = false;
-    watchButton.backgroundColor = .red;
-    watchButton.setTitle("Play", for: .normal);
-    watchButton.setTitleColor(.white, for: .normal);
-    watchButton.titleLabel?.font = .systemFont(ofSize: 24);
-    watchButton.layer.cornerRadius = 10;
-    watchButton.addTarget(self, action: #selector(watchMovie), for: .touchUpInside)
-    
-    watchButton.setImage(UIImage(systemName: "play.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 24)), for: .normal);
-    watchButton.tintColor = .white;
-    watchButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 30);
-    
-    NSLayoutConstraint.activate([
-      watchButton.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-      watchButton.topAnchor.constraint(equalTo: movieName.bottomAnchor, constant: 20),
-      watchButton.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 70),
-      scrollView.trailingAnchor.constraint(equalTo: watchButton.trailingAnchor, constant: 70),
-      watchButton.heightAnchor.constraint(equalToConstant: 50)
-    ]);
-  };
-  
-  func configureMovieDescription() {
-    scrollView.addSubview(movieDescription);
-    
-    movieDescription.translatesAutoresizingMaskIntoConstraints = false;
-    movieDescription.tintColor = .white;
-    movieDescription.font = .preferredFont(forTextStyle: .title3);
-    movieDescription.adjustsFontForContentSizeCategory = true;
-    movieDescription.numberOfLines = 0;
-    
-    if let description = movie?.overview {
-      movieDescription.text = description;
-    };
-    
-    NSLayoutConstraint.activate([
-      movieDescription.topAnchor.constraint(equalTo: watchButton.bottomAnchor, constant: 20),
-      movieDescription.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10),
-      scrollView.trailingAnchor.constraint(equalTo: movieDescription.trailingAnchor, constant: 10),
-      movieDescription.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
-    ]);
+  func watchMovieTrailer() {
+    watchMovie();
   };
 };

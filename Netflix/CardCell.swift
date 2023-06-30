@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class CardCell: UITableViewCell {
   static let indetifer = "CardCell";
@@ -88,14 +89,23 @@ extension CardCell: UICollectionViewDelegate, UICollectionViewDataSource {
     let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in
       let downloadAction = UIAction(title: "Download", subtitle: nil, image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
         if let movie = self!.movies?.results[indexPath.item] {
-          let movieDownload = MovieDownload(context: self!.context);
-          
-          movieDownload.title = movie.title;
-          movieDownload.posterPath = movie.posterPath;
+          let fetchRequest = MovieDownload.fetchRequest();
+          fetchRequest.predicate = NSPredicate(format: "title == %@", movie.title as! CVarArg);
           
           do {
-            try self?.context.save();
-            print("Movie saved");
+            let existingMovies = try self?.context.fetch(fetchRequest);
+            
+            if let existingMovie = existingMovies?.first {
+              print("Movie already exists: \(existingMovie.title ?? "")");
+            } else {
+              let movieDownload = MovieDownload(context: self!.context);
+              
+              movieDownload.title = movie.title;
+              movieDownload.posterPath = movie.posterPath;
+              
+              try self?.context.save();
+              print("Movie saved");
+            };
           } catch {
             print("Failed to save movie");
           };

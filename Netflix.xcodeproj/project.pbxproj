@@ -19,6 +19,8 @@
 		7193F9852A4B709600B1378E /* DownloadMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F9842A4B709600B1378E /* DownloadMoviesViewController.swift */; };
 		7193F9872A4B775F00B1378E /* DownloadMovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F9862A4B775F00B1378E /* DownloadMovieView.swift */; };
 		7193F98B2A4BBEED00B1378E /* MovieDownloadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F98A2A4BBEED00B1378E /* MovieDownloadCell.swift */; };
+		7193F98D2A4F5C2700B1378E /* MovieDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F98C2A4F5C2700B1378E /* MovieDescriptionView.swift */; };
+		7193F98F2A4F762B00B1378E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7193F98E2A4F762B00B1378E /* HomeView.swift */; };
 		71CEB8F82A2A6638007ED159 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB8F72A2A6638007ED159 /* HomeViewController.swift */; };
 		71CEB8FB2A2AF2F4007ED159 /* MovieCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB8FA2A2AF2F4007ED159 /* MovieCarousel.swift */; };
 		71CEB8FD2A2C4431007ED159 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CEB8FC2A2C4431007ED159 /* CardCell.swift */; };
@@ -48,6 +50,8 @@
 		7193F9842A4B709600B1378E /* DownloadMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadMoviesViewController.swift; sourceTree = "<group>"; };
 		7193F9862A4B775F00B1378E /* DownloadMovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadMovieView.swift; sourceTree = "<group>"; };
 		7193F98A2A4BBEED00B1378E /* MovieDownloadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDownloadCell.swift; sourceTree = "<group>"; };
+		7193F98C2A4F5C2700B1378E /* MovieDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDescriptionView.swift; sourceTree = "<group>"; };
+		7193F98E2A4F762B00B1378E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		71CEB8F72A2A6638007ED159 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		71CEB8FA2A2AF2F4007ED159 /* MovieCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCarousel.swift; sourceTree = "<group>"; };
 		71CEB8FC2A2C4431007ED159 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			children = (
 				71CEB8F72A2A6638007ED159 /* HomeViewController.swift */,
 				71CEB8FE2A3152C4007ED159 /* GetMoviesData.swift */,
+				7193F98E2A4F762B00B1378E /* HomeView.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				71CEB9042A3A415D007ED159 /* MovieDescriptionViewController.swift */,
+				7193F98C2A4F5C2700B1378E /* MovieDescriptionView.swift */,
 			);
 			name = MovieDescription;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				7193F98B2A4BBEED00B1378E /* MovieDownloadCell.swift in Sources */,
 				71DBF3CB2A3FE11C0066C6D2 /* ProfileView.swift in Sources */,
 				71CEB8F82A2A6638007ED159 /* HomeViewController.swift in Sources */,
+				7193F98D2A4F5C2700B1378E /* MovieDescriptionView.swift in Sources */,
 				7193F9852A4B709600B1378E /* DownloadMoviesViewController.swift in Sources */,
 				71769E5B2A1D914400C73F6B /* WelcomeViewController.swift in Sources */,
 				7193F9802A4A177500B1378E /* MovieDownload+CoreDataProperties.swift in Sources */,
@@ -328,6 +335,7 @@
 				71769E572A1D914400C73F6B /* AppDelegate.swift in Sources */,
 				71CEB90B2A3EB22D007ED159 /* ProfileViewController.swift in Sources */,
 				7193F97F2A4A177500B1378E /* MovieDownload+CoreDataClass.swift in Sources */,
+				7193F98F2A4F762B00B1378E /* HomeView.swift in Sources */,
 				71769E592A1D914400C73F6B /* SceneDelegate.swift in Sources */,
 				71CEB90D2A3EB511007ED159 /* UIViewController+Utils.swift in Sources */,
 				71CEB8FB2A2AF2F4007ED159 /* MovieCarousel.swift in Sources */,
